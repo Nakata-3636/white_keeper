@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2026-08-06",
+    "start_time": "9:30",
+    "end_time": "10:00",
+    "season": "summer",
+    "sunscreen": true,
+    "sunny": true,
+    "total": 0.3
+  },
+  {
+    "date": "2026-08-05",
+    "start_time": "11:00",
+    "end_time": "11:30",
+    "season": "summer",
+    "sunscreen": true,
+    "sunny": true,
+    "total": 0.45
+  }
+]
