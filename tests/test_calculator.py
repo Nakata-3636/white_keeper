@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 from white_keeper.calculator import calculate_exposure, calculate_exposure_periods, get_score_band
-from white_keeper.storage import load_records, save_record
+from white_keeper.storage import delete_record, load_records, save_record
 
 
 def test_calculate_exposure_uses_specified_coefficients() -> None:
@@ -82,3 +82,18 @@ def test_save_and_load_records(tmp_path: Path) -> None:
 
     assert loaded[0]["date"] == "2026-08-06"
     assert loaded[0]["total"] == pytest.approx(3.0)
+
+
+def test_delete_record_removes_matching_entry(tmp_path: Path) -> None:
+    storage_path = tmp_path / "records.json"
+    first_record = {"record_id": "abc123", "total": 1.0}
+    second_record = {"record_id": "def456", "total": 2.0}
+
+    save_record(first_record, storage_path)
+    save_record(second_record, storage_path)
+
+    assert delete_record("abc123", storage_path) is True
+
+    loaded = load_records(storage_path)
+    assert len(loaded) == 1
+    assert loaded[0]["record_id"] == "def456"

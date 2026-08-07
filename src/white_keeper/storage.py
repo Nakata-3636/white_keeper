@@ -38,3 +38,20 @@ def save_record(record: dict[str, Any], path: str | Path | None = None) -> None:
 
     with storage_path.open("w", encoding="utf-8") as handle:
         json.dump(updated_records, handle, ensure_ascii=False, indent=2)
+
+
+def delete_record(record_id: str, path: str | Path | None = None) -> bool:
+    storage_path = Path(path or "data/records.json")
+    if not storage_path.exists():
+        return False
+
+    records = load_records(storage_path)
+    filtered_records = [item for item in records if item.get("record_id") != record_id]
+
+    if len(filtered_records) == len(records):
+        return False
+
+    with storage_path.open("w", encoding="utf-8") as handle:
+        json.dump(filtered_records, handle, ensure_ascii=False, indent=2)
+
+    return True

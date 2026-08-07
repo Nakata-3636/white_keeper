@@ -26,25 +26,55 @@
     "total": 13.333
   },
   {
-    "record_id": "20260807100501159412",
+    "record_id": "20260807105530174986",
     "version": 2,
-    "date": "2026-08-07",
-    "region": "東京都 文京区",
+    "date": "2026-01-22",
     "periods": [
       {
         "start_time": "10:00",
-        "end_time": "13:30"
+        "end_time": "10:10"
       },
       {
-        "start_time": "15:00",
-        "end_time": "17:20"
+        "start_time": "22:00",
+        "end_time": "22:20"
       }
     ],
     "weather": "晴れ",
-    "weather_source": "manual",
     "sunscreen": "あり（塗り直しなし）",
-    "total": 4.8,
-    "score_label": "中",
-    "score_message": "やや日焼けの可能性があります。長時間の外出時はケアを推奨します。"
+    "total": 0.04,
+    "score_label": "低",
+    "score_message": "肌への影響は軽微です。"
+  },
+  {
+    "record_id": "20260807105616561189",
+    "version": 2,
+    "date": "2026-05-24",
+    "periods": [
+      {
+        "start_time": "10:00",
+        "end_time": "19:00"
+      }
+    ],
+    "weather": "晴れ",
+    "sunscreen": "あり（塗り直しなし）",
+    "total": 6.0,
+    "score_label": "高",
+    "score_message": "日焼けの危険性があります。冷却や保湿などのアフターケアを行ってください。"
+  },
+  {
+    "record_id": "20260807105646724538",
+    "version": 2,
+    "date": "2026-07-04",
+    "periods": [
+      {
+        "start_time": "10:00",
+        "end_time": "19:00"
+      }
+    ],
+    "weather": "曇り",
+    "sunscreen": "あり（塗り直しなし）",
+    "total": 6.0,
+    "score_label": "高",
+    "score_message": "日焼けの危険性があります。冷却や保湿などのアフターケアを行ってください。"
   }
 ]
