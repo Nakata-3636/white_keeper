@@ -12,7 +12,10 @@ def load_records(path: str | Path | None = None) -> list[dict[str, Any]]:
 
     try:
         with storage_path.open("r", encoding="utf-8") as handle:
-            return json.load(handle)
+            loaded = json.load(handle)
+            if isinstance(loaded, list):
+                return loaded
+            return []
     except json.JSONDecodeError:
         return []
 
@@ -22,11 +25,14 @@ def save_record(record: dict[str, Any], path: str | Path | None = None) -> None:
     storage_path.parent.mkdir(parents=True, exist_ok=True)
 
     records = load_records(storage_path)
-    existing = [item for item in records if item.get("date") == record.get("date")]
-    if existing:
+    record_id = record.get("record_id")
+
+    if record_id is not None:
         updated_records = [
-            record if item.get("date") == record.get("date") else item for item in records
+            record if item.get("record_id") == record_id else item for item in records
         ]
+        if not any(item.get("record_id") == record_id for item in records):
+            updated_records.append(record)
     else:
         updated_records = [*records, record]
 

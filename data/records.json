@@ -16,5 +16,35 @@
     "sunscreen": true,
     "sunny": true,
     "total": 0.45
+  },
+  {
+    "date": "2026-08-07",
+    "start_time": "10:00",
+    "end_time": "13:20",
+    "weather": "晴れ",
+    "sunscreen": "なし",
+    "total": 13.333
+  },
+  {
+    "record_id": "20260807100501159412",
+    "version": 2,
+    "date": "2026-08-07",
+    "region": "東京都 文京区",
+    "periods": [
+      {
+        "start_time": "10:00",
+        "end_time": "13:30"
+      },
+      {
+        "start_time": "15:00",
+        "end_time": "17:20"
+      }
+    ],
+    "weather": "晴れ",
+    "weather_source": "manual",
+    "sunscreen": "あり（塗り直しなし）",
+    "total": 4.8,
+    "score_label": "中",
+    "score_message": "やや日焼けの可能性があります。長時間の外出時はケアを推奨します。"
   }
 ]
