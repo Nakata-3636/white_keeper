@@ -97,3 +97,21 @@ def test_delete_record_removes_matching_entry(tmp_path: Path) -> None:
     loaded = load_records(storage_path)
     assert len(loaded) == 1
     assert loaded[0]["record_id"] == "def456"
+
+
+def test_get_auto_weather_choice_uses_api_suggestion(monkeypatch) -> None:
+    from white_keeper.app import get_auto_weather_choice
+
+    monkeypatch.setattr(
+        "white_keeper.app.fetch_weather_suggestion",
+        lambda region_query, date_value: {
+            "source": "api",
+            "weather_label": "晴れ",
+            "message": "東京都文京区 の天候候補を自動取得しました。",
+        },
+    )
+
+    result = get_auto_weather_choice("東京都文京区", "2026-08-05")
+
+    assert result["weather_label"] == "晴れ"
+    assert result["source"] == "api"

@@ -76,5 +76,41 @@
     "total": 6.0,
     "score_label": "高",
     "score_message": "日焼けの危険性があります。冷却や保湿などのアフターケアを行ってください。"
+  },
+  {
+    "record_id": "20260807110643978294",
+    "version": 2,
+    "date": "2026-08-05",
+    "periods": [
+      {
+        "start_time": "11:00",
+        "end_time": "11:20"
+      },
+      {
+        "start_time": "15:00",
+        "end_time": "23:00"
+      }
+    ],
+    "weather": "晴れ",
+    "sunscreen": "あり（塗り直しなし）",
+    "total": 1.0,
+    "score_label": "低",
+    "score_message": "肌への影響は軽微です。"
+  },
+  {
+    "record_id": "20260908125117031809",
+    "version": 2,
+    "date": "2026-09-08",
+    "periods": [
+      {
+        "start_time": "10:00",
+        "end_time": "13:20"
+      }
+    ],
+    "weather": "晴れ",
+    "sunscreen": "なし",
+    "total": 10.0,
+    "score_label": "極めて高",
+    "score_message": "強い紫外線ダメージを受けています。しっかりと肌を休ませてください。"
   }
 ]
